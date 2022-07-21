@@ -42,7 +42,7 @@ INSERT INTO `project` (`id`, `name`, `description`, `date`, `link`) VALUES
 (2, 'Hero corporation', 'Jeu permettant de choisir héro pour affronter une série de boss', '04/04/2022 | 11/05/2022', 'https://theodep.github.io/Hero-Corporation/'),
 (3, 'Postverta', 'Application mobile de lecture intégrant un jeu de carte', '24/05/2022 | 13/07/2022', 'en cours de deploiement'),
 (4, 'LamaZone', 'Site web de vente montrant le coup énergétique pour chaque requète faites', '12/05/2022 | 13/05/2022', 'https://github.com/PiXeleum/2022-03-JS-Reims-hackathon-1-LamaZone.git'),
-(5, 'Trombinoscope', 'Site web permettant de présenter la promo', '29/06/2022 | 01/07/2022', 'https://github.com/PiXeleum/2022-03-JS-Reims-hackathon-2-ptits-crackers.git');
+(5, 'Ptits-crackers', 'Site web permettant d améliorer la communication en entreprise', '29/06/2022 | 01/07/2022', 'https://github.com/PiXeleum/2022-03-JS-Reims-hackathon-2-ptits-crackers.git');
 
 
 --

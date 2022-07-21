@@ -1,9 +1,6 @@
-import NavBar from "@components/NavBar";
-
 export default function Profile() {
   return (
     <div>
-      <NavBar />
       <div className="text-align-center p-1">
         <h1>Profil</h1>
         <picture className="flex justify-center items-center">
