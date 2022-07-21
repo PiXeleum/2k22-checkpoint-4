@@ -24,7 +24,7 @@ export default function Project() {
 
   return (
     <section className="text-align-center p-1">
-      <h1 className="mb-5">Project</h1>
+      <h1 className="font-bold mb-5">Project</h1>
       {projectList.map((project) => (
         <article key={project.id} className="mb-16">
           <h1 className="text-lg font-bold">{project.name}</h1>
@@ -36,7 +36,7 @@ export default function Project() {
           >
             {project.link}
           </a>
-          <ul className="flex pt-4 space-x-2">
+          <ul className="flex p-1 space-x-2">
             {technoList.map((techno) => (
               <li key={techno.id}>
                 <picture>
