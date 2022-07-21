@@ -27,9 +27,13 @@ export default function Project() {
       <h1 className="mb-5">Project</h1>
       {projectList.map((project) => (
         <article key={project.id} className="mb-16">
-          <h1 className="text-lg">{project.name}</h1>
+          <h1 className="text-lg font-bold">{project.name}</h1>
           <p>{project.description}</p>
-          <a href={project.link} target="_blanck">
+          <a
+            href={project.link}
+            target="_blanck"
+            className="text-blue-700 hover:text-emerald-700"
+          >
             {project.link}
           </a>
           <ul className="flex pt-4 space-x-2">
