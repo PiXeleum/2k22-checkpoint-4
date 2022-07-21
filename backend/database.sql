@@ -30,7 +30,7 @@ CREATE TABLE `project` (
   `id` int(11) UNSIGNED NOT NULL,
   `name` varchar(50) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `date`varchar(255) NOT NULL,
+  `date` DATE,
   `link` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 --
@@ -38,8 +38,12 @@ CREATE TABLE `project` (
 --
 
 INSERT INTO `project` (`id`, `name`, `description`, `date`, `link`) VALUES
-(1, 'Stuff'),
-(2, 'Doodads');
+(1, 'Trombinoscope', 'Site web permettant de présenter la promo', '01/03/2022 | 31/03/2022', 'https://pixeleum.github.io/trombinoscope/'),
+(2, 'Hero corporation', 'Jeu permettant de choisir héro pour affronter une série de boss', '04/04/2022 | 11/05/2022', 'https://theodep.github.io/Hero-Corporation/'),
+(3, 'Postverta', 'Application mobile de lecture intégrant un jeu de carte', '24/05/2022 | 13/07/2022', 'en cours de deploiement'),
+(4, 'LamaZone', 'Site web de vente montrant le coup énergétique pour chaque requète faites', '12/05/2022 | 13/05/2022', 'https://github.com/PiXeleum/2022-03-JS-Reims-hackathon-1-LamaZone.git'),
+(5, 'Trombinoscope', 'Site web permettant de présenter la promo', '29/06/2022 | 01/07/2022', 'https://github.com/PiXeleum/2022-03-JS-Reims-hackathon-2-ptits-crackers.git');
+
 
 --
 -- Index pour les tables exportées
@@ -72,7 +76,7 @@ ALTER TABLE `project`
 CREATE TABLE `techno` (
   `id` int(11) UNSIGNED NOT NULL,
   `name` varchar(50) NOT NULL,
-  `logo` varchar(255) NOT NULL
+  `logo` varchar(255) NULL
   
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 --
@@ -80,8 +84,14 @@ CREATE TABLE `techno` (
 --
 
 INSERT INTO `techno` (`id`, `name`, `logo`) VALUES
-(1, 'Stuff'),
-(2, 'Doodads');
+(1, 'React', 'https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg'),
+(2, 'JavaScript', 'https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg'),
+(3, 'HTML', 'https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg'),
+(4, 'Node.js', 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg'),
+(5, 'Express', 'https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg'),
+(6, 'MySQL', 'https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg'),
+(7, 'CSS', 'https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg'),
+(8, 'Tailwind', 'https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original-wordmark.svg');
 
 --
 -- Index pour les tables exportées
