@@ -1,6 +1,20 @@
 import NavBar from "@components/NavBar";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 export default function Project() {
+  const [technoList, setTechnoList] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(
+        `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/techno`
+      )
+      .then((response) => {
+        setTechnoList(response.data);
+      });
+  }, []);
+
   return (
     <section>
       <NavBar />
@@ -27,27 +41,68 @@ export default function Project() {
           tempora assumenda ipsum sint et ex distinctio. Iure esse explicabo
           voluptates similique autem earum reprehenderit enim neque?
         </p>
-        <ul>
+        <ul className="flex p-1 space-x-2">
           <li>
-            <p>test</p>
+            <picture>
+              {technoList[0] && (
+                <img
+                  className="h-8"
+                  src={technoList[0].logo}
+                  alt={technoList[0].name}
+                />
+              )}
+            </picture>
           </li>
           <li>
-            <p>test</p>
+            <picture>
+              {technoList[1] && (
+                <img
+                  className="h-8"
+                  src={technoList[1].logo}
+                  alt={technoList[1].name}
+                />
+              )}
+            </picture>
           </li>
           <li>
-            <p>test</p>
+            <picture>
+              {technoList[2] && (
+                <img
+                  className="h-8"
+                  src={technoList[2].logo}
+                  alt={technoList[2].name}
+                />
+              )}
+            </picture>
           </li>
           <li>
-            <p>test</p>
+            <picture>
+              {technoList[3] && (
+                <img
+                  className="h-8"
+                  src={technoList[3].logo}
+                  alt={technoList[3].name}
+                />
+              )}
+            </picture>
           </li>
           <li>
-            <p>test</p>
+            <picture>
+              {technoList[4] && (
+                <img
+                  className="h-8"
+                  src={technoList[4].logo}
+                  alt={technoList[4].name}
+                />
+              )}
+            </picture>
           </li>
         </ul>
         <a href="empty">link </a>
       </article>
+
       <article className="text-align-center p-1">
-        <h2>project one</h2>
+        <h2>project two</h2>
         <picture className="flex justify-center items-center">
           <img
             className="h-15"
@@ -68,25 +123,66 @@ export default function Project() {
           tempora assumenda ipsum sint et ex distinctio. Iure esse explicabo
           voluptates similique autem earum reprehenderit enim neque?
         </p>
-        <ul>
+        <ul className="flex p-1 space-x-2">
           <li>
-            <p>test</p>
+            <picture>
+              {technoList[0] && (
+                <img
+                  className="h-8"
+                  src={technoList[0].logo}
+                  alt={technoList[0].name}
+                />
+              )}
+            </picture>
           </li>
           <li>
-            <p>test</p>
+            <picture>
+              {technoList[1] && (
+                <img
+                  className="h-8"
+                  src={technoList[1].logo}
+                  alt={technoList[1].name}
+                />
+              )}
+            </picture>
           </li>
           <li>
-            <p>test</p>
+            <picture>
+              {technoList[2] && (
+                <img
+                  className="h-8"
+                  src={technoList[2].logo}
+                  alt={technoList[2].name}
+                />
+              )}
+            </picture>
           </li>
           <li>
-            <p>test</p>
+            <picture>
+              {technoList[3] && (
+                <img
+                  className="h-8"
+                  src={technoList[3].logo}
+                  alt={technoList[3].name}
+                />
+              )}
+            </picture>
           </li>
           <li>
-            <p>test</p>
+            <picture>
+              {technoList[4] && (
+                <img
+                  className="h-8"
+                  src={technoList[4].logo}
+                  alt={technoList[4].name}
+                />
+              )}
+            </picture>
           </li>
         </ul>
         <a href="empty">link </a>
       </article>
+
       <article className="text-align-center p-1">
         <h2>project three</h2>
         <picture className="flex justify-center items-center">
@@ -109,21 +205,61 @@ export default function Project() {
           tempora assumenda ipsum sint et ex distinctio. Iure esse explicabo
           voluptates similique autem earum reprehenderit enim neque?
         </p>
-        <ul>
+        <ul className="flex p-1 space-x-2">
           <li>
-            <p>test</p>
+            <picture>
+              {technoList[0] && (
+                <img
+                  className="h-8"
+                  src={technoList[0].logo}
+                  alt={technoList[0].name}
+                />
+              )}
+            </picture>
           </li>
           <li>
-            <p>test</p>
+            <picture>
+              {technoList[1] && (
+                <img
+                  className="h-8"
+                  src={technoList[1].logo}
+                  alt={technoList[1].name}
+                />
+              )}
+            </picture>
           </li>
           <li>
-            <p>test</p>
+            <picture>
+              {technoList[2] && (
+                <img
+                  className="h-8"
+                  src={technoList[2].logo}
+                  alt={technoList[2].name}
+                />
+              )}
+            </picture>
           </li>
           <li>
-            <p>test</p>
+            <picture>
+              {technoList[3] && (
+                <img
+                  className="h-8"
+                  src={technoList[3].logo}
+                  alt={technoList[3].name}
+                />
+              )}
+            </picture>
           </li>
           <li>
-            <p>test</p>
+            <picture>
+              {technoList[4] && (
+                <img
+                  className="h-8"
+                  src={technoList[4].logo}
+                  alt={technoList[4].name}
+                />
+              )}
+            </picture>
           </li>
         </ul>
         <a href="empty">link </a>
