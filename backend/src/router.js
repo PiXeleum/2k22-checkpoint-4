@@ -1,7 +1,6 @@
 const express = require("express");
 
-const { ProjectController } = require("./controllers");
-const { TechnoController } = require("./controllers");
+const { ProjectController, TechnoController } = require("./controllers");
 
 const router = express.Router();
 
