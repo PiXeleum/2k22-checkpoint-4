@@ -23,19 +23,21 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `item`
+-- Structure de la table `project`
 --
 
-CREATE TABLE `item` (
+CREATE TABLE `project` (
   `id` int(11) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL
+  `name` varchar(50) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `date`varchar(255) NOT NULL,
+  `link` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 --
--- Contenu de la table `item`
+-- Contenu de la table `project`
 --
 
-INSERT INTO `item` (`id`, `title`) VALUES
+INSERT INTO `project` (`id`, `name`, `description`, `date`, `link`) VALUES
 (1, 'Stuff'),
 (2, 'Doodads');
 
@@ -44,9 +46,9 @@ INSERT INTO `item` (`id`, `title`) VALUES
 --
 
 --
--- Index pour la table `item`
+-- Index pour la table `project`
 --
-ALTER TABLE `item`
+ALTER TABLE `project`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -54,9 +56,51 @@ ALTER TABLE `item`
 --
 
 --
--- AUTO_INCREMENT pour la table `item`
+-- AUTO_INCREMENT pour la table `project`
 --
-ALTER TABLE `item`
+ALTER TABLE `project`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+--
+-- Structure de la table `techno`
+--
+
+CREATE TABLE `techno` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `logo` varchar(255) NOT NULL
+  
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+--
+-- Contenu de la table `techno`
+--
+
+INSERT INTO `techno` (`id`, `name`, `logo`) VALUES
+(1, 'Stuff'),
+(2, 'Doodads');
+
+--
+-- Index pour les tables exportées
+--
+
+--
+-- Index pour la table `techno`
+--
+ALTER TABLE `techno`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pour les tables exportées
+--
+
+--
+-- AUTO_INCREMENT pour la table `techno`
+--
+ALTER TABLE `techno`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
