@@ -5,7 +5,44 @@ class ProjectController {
     models.project
       .findAll()
       .then(([rows]) => {
-        res.send(rows);
+        res.send(
+          rows.reduce((projectsWithTechno, project) => {
+            const existingProject = projectsWithTechno.find(
+              (projectWithTechno) => projectWithTechno.id === project.id
+            );
+
+            if (existingProject) {
+              existingProject.technoList.push({
+                id: project.techno_id,
+                logo: project.techno_logo,
+                name: project.techno_name,
+              });
+            } else {
+              // eslint-disable-next-line camelcase
+              const { techno_id, techno_logo, techno_name, ...projectData } =
+                project;
+              // eslint-disable-next-line camelcase
+              if (techno_id != null) {
+                projectData.technoList = [
+                  {
+                    // eslint-disable-next-line camelcase
+                    id: techno_id,
+                    // eslint-disable-next-line camelcase
+                    logo: techno_logo,
+                    // eslint-disable-next-line camelcase
+                    name: techno_name,
+                  },
+                ];
+              } else {
+                projectData.technoList = [];
+              }
+
+              projectsWithTechno.push(projectData);
+            }
+
+            return projectsWithTechno;
+          }, [])
+        );
       })
       .catch((err) => {
         console.error(err);

@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `project` (
-  `id` int(11) UNSIGNED NOT NULL,
+  `id` int(50) UNSIGNED NOT NULL,
   `name` varchar(50) NOT NULL,
   `description` varchar(255) NOT NULL,
   `date` DATE,
@@ -63,7 +63,7 @@ ALTER TABLE `project`
 -- AUTO_INCREMENT pour la table `project`
 --
 ALTER TABLE `project`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(50) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
@@ -74,7 +74,7 @@ ALTER TABLE `project`
 --
 
 CREATE TABLE `techno` (
-  `id` int(11) UNSIGNED NOT NULL,
+  `id` int(50) UNSIGNED NOT NULL,
   `name` varchar(50) NOT NULL,
   `logo` varchar(255) NULL
   
@@ -111,7 +111,86 @@ ALTER TABLE `techno`
 -- AUTO_INCREMENT pour la table `techno`
 --
 ALTER TABLE `techno`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(50) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `project`
+--
+
+CREATE TABLE `project_techno` (
+  `id` int(200) UNSIGNED NOT NULL,
+  `project_id` int(11) UNSIGNED NOT NULL,
+  `techno_id` int(11) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+--
+-- Contenu de la table `project`
+--
+
+INSERT INTO `project_techno` (`id`, `project_id`, `techno_id`) VALUES
+(1, 1, 3),
+(2, 1, 7),
+(3, 2, 1),
+(4, 2, 2),
+(5, 2, 3),
+(6, 2, 4),
+(7, 2, 5),
+(8, 2, 6),
+(9, 2, 7),
+(10, 2, 8),
+(11, 3, 1),
+(12, 3, 2),
+(13, 3, 3),
+(14, 3, 4),
+(15, 3, 5),
+(16, 3, 6),
+(17, 3, 7),
+(18, 3, 8),
+(19, 4, 1),
+(20, 4, 2),
+(21, 4, 3),
+(22, 4, 4),
+(23, 4, 5),
+(24, 4, 6),
+(25, 4, 7),
+(26, 4, 8),
+(27, 5, 1),
+(28, 5, 2),
+(29, 5, 3),
+(30, 5, 4),
+(31, 5, 5),
+(32, 5, 6),
+(33, 5, 7),
+(34, 5, 8);
+
+--
+-- Index pour les tables exportées
+--
+
+--
+-- Index pour la table `project`
+--
+ALTER TABLE `project_techno`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `project_techno`
+  ADD FOREIGN KEY (project_id) REFERENCES project(id);
+ALTER TABLE `project_techno`
+  ADD FOREIGN KEY (techno_id) REFERENCES techno(id);
+
+--
+-- AUTO_INCREMENT pour les tables exportées
+--
+
+--
+-- AUTO_INCREMENT pour la table `project`
+--
+ALTER TABLE `project_techno`
+  MODIFY `id` int(200) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

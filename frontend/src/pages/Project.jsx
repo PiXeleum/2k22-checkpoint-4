@@ -2,17 +2,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 export default function Project() {
-  const [technoList, setTechnoList] = useState([]);
   const [projectList, setProjectList] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(
-        `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/techno`
-      )
-      .then((response) => {
-        setTechnoList(response.data);
-      });
     axios
       .get(
         `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/project`
@@ -23,7 +15,7 @@ export default function Project() {
   }, []);
 
   return (
-    <section className="text-center p-3">
+    <section className=" project text-center p-3">
       <h1 className="font-bold text-2xl mb-5">Project</h1>
       {projectList.map((project) => (
         <article
@@ -40,7 +32,7 @@ export default function Project() {
             {project.link}
           </a>
           <ul className="flex p-1 pt-6 space-x-2">
-            {technoList.map((techno) => (
+            {project.technoList.map((techno) => (
               <li key={techno.id}>
                 <picture>
                   <img className="h-8" src={techno.logo} alt={techno.name} />
