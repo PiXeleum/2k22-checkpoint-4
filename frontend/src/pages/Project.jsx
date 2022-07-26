@@ -23,8 +23,8 @@ export default function Project() {
   }, []);
 
   return (
-    <section className="text-align-center p-3 bg-zinc-900">
-      <h1 className="font-bold mb-5 text-zinc-100">Project</h1>
+    <section className="text-center p-3">
+      <h1 className="font-bold text-2xl mb-5">Project</h1>
       {projectList.map((project) => (
         <article
           key={project.id}

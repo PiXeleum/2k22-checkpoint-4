@@ -1,16 +1,9 @@
 body {
   margin: 0;
+  color: rgb(244 244 245);
+  background-color: rgb(24 24 27);
 }
 
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-link {
-  color: #64dcfd;
 }
