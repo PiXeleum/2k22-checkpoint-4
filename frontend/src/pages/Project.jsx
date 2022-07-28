@@ -15,12 +15,12 @@ export default function Project() {
   }, []);
 
   return (
-    <section className=" project text-center p-3">
+    <section className="text-center p-3">
       <h1 className="font-bold text-2xl mb-5">Project</h1>
       {projectList.map((project) => (
         <article
           key={project.id}
-          className="mb-10 p-1 border-2 border-gray-600 bg-gray-500 text-zinc-100"
+          className="animColor mb-10 p-1 border-2 border-gray-600 bg-gray-500 text-zinc-100"
         >
           <h1 className="text-lg font-bold">{project.name}</h1>
           <p>{project.description}</p>
