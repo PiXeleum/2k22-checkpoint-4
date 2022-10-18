@@ -27,7 +27,7 @@ export default function Project() {
           <a
             href={project.link}
             target="_blanck"
-            className="text-purple-800 hover:text-emerald-400"
+            className="text-emerald-400 hover:text-purple-800 "
           >
             {project.link}
           </a>
